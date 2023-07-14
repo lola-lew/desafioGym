@@ -10,7 +10,7 @@ public class ClienteServicio {
   ArrayList<Cliente> clientes = new ArrayList<>();
   Scanner scan = new Scanner (System.in);
 
-  public void registrarCliente(Cliente cliente){
+  public void registrarCliente(){
     Cliente cli = new Cliente();
         System.out.println("");
         System.out.println("id: ");

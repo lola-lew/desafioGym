@@ -18,13 +18,13 @@ public class App {
             System.out.println("Ingrese la opción: \n1.Cargar cliente. \n2.Actualizar cliente. \n3.Eliminar cliente. \n4. Ver clientes. \n5.Cargar rutina. \n6.Actualizar rutina. \n7.Eliminar rutina. \n8. Ver rutinas. \n9.Salir. ");
             opc = scan.nextInt();
             switch(opc) {
-                case 1: clienteServ.registrarCliente(null); break;
-                case 2: clienteServ.actualizarCliente(opc, null, opc, opc, opc, null); break;
-                case 3: clienteServ.eliminarCliente(opc); break;
+                case 1: clienteServ.registrarCliente(); break;
+                case 2: clienteServ.actualizarCliente(); break;
+                case 3: clienteServ.eliminarCliente(); break;
                 case 4: clienteServ.obtenerClientes(); break;
-                case 5: rutinaServ.registrarRutina(null); break;
-                case 6: rutinaServ.actualizarRutina(opc, null, opc, null, null); break;
-                case 7: rutinaServ.eliminarRutina(opc); break;
+                case 5: rutinaServ.registrarRutina(); break;
+                case 6: rutinaServ.actualizarRutina(); break;
+                case 7: rutinaServ.eliminarRutina(); break;
                 case 8: rutinaServ.obtenerRutinas();
                 case 9: opcSalir = true; break;
             }

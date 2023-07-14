@@ -10,8 +10,8 @@ public class RutinaServicio {
   ArrayList<Rutina> rutinas = new ArrayList<>();
   Scanner scan = new Scanner (System.in);
 
-  public void registrarRutina(Rutina rutina){
-  rutinas.add(rutina);
+  public void registrarRutina(){
+  // rutinas.add();
   }
 
   public ArrayList<Rutina> obtenerRutinas() {
@@ -20,7 +20,7 @@ public class RutinaServicio {
     return rutinas;
   }
 
-  public void actualizarRutina(int id, String nombre, int duracion, String nivelDificultad, String descripcion) {
+  public void actualizarRutina() {
     // for(int i = 0; i < rutinas.size(); i++) {
     //   if( id == rutinas.get(i).getId()) { 
     //     rutinas.get(i).setNombre(nombre); 
@@ -40,7 +40,7 @@ public class RutinaServicio {
 
   }
 
-  public void eliminarRutina(int id) {
+  public void eliminarRutina() {
     for(int i = 0; i < rutinas.size(); i++) {
       if(id == rutinas.get(i).getId()) rutinas.remove(i);
     }
