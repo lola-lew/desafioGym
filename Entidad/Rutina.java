@@ -16,6 +16,9 @@ public class Rutina {
     this.nivelDificultad = nivelDificultad;
     this.descripcion = descripcion;
   }
+
+  // getters & setters
+  
   public int getId() {
     return id;
   }

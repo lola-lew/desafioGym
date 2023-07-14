@@ -20,6 +20,8 @@ public class Cliente {
     this.objetivo = objetivo;
   }
 
+  // getters & setters
+
   public int getId() {
     return id;
   }
