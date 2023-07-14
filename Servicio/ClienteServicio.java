@@ -1,6 +1,7 @@
 package Servicio;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import Entidad.Cliente;
@@ -9,7 +10,7 @@ public class ClienteServicio {
 
   ArrayList<Cliente> clientes = new ArrayList<>();
   Scanner scan = new Scanner (System.in);
-
+  
   public void registrarCliente(){
     Cliente cli = new Cliente();
         System.out.println("");
@@ -30,39 +31,54 @@ public class ClienteServicio {
         cli.setObjetivo(scan.nextLine());
 
         clientes.add(cli);
-  // clientes.add(cliente);
   }
 
   public ArrayList<Cliente> obtenerClientes() {
-    for(int i = 0; i < clientes.size(); i++) System.out.println(clientes.get(i).toString());
-    //     for (Cliente cliente : clientes) {System.out.println(cliente);}
+    for (Cliente cliente : clientes) System.out.println(cliente);
     return clientes;
   }
 
-  public void actualizarCliente(int id, String nombre, int edad, double altura, double peso, String objetivo) {
-    // for(int i = 0; i < clientes.size(); i++) {
-    //   if( id == clientes.get(i).getId()) { 
-    //     clientes.get(i).setNombre(nombre); 
-    //     clientes.get(i).setEdad(edad); 
-    //     clientes.get(i).setAltura(altura); 
-    //     clientes.get(i).setPeso(peso); 
-    //     clientes.get(i).setObjetivo(objetivo);      
-    //   }
-    // }
+  public void actualizarCliente() {
+    System.out.println("Que cliente desea actualizar? Número de id: ");
+    int id = scan.nextInt();
+    scan.nextLine();
+
     for(Cliente cliente : clientes){
       if(id == cliente.getId()){
-          cliente.setNombre(nombre);
-          cliente.setAltura(altura);
-          cliente.setPeso(peso);
-          cliente.setObjetivo(objetivo);
+        System.out.println("Nombre: ");
+        cliente.setNombre(scan.next());
+        System.out.println("Edad: ");
+        cliente.setEdad(scan.nextInt());
+        scan.nextLine();
+        System.out.println("Altura: ");
+        cliente.setAltura(scan.nextDouble());
+        System.out.println("Peso: ");
+        cliente.setPeso(scan.nextInt());
+        scan.nextLine();
+        System.out.println("Objetivo: ");
+        cliente.setObjetivo(scan.nextLine());
+        System.out.println("Cliente actualizado!");
+      } else {
+        System.out.println("El id ingresado no es válido.");
       }
     }
-
   }
 
-  public void eliminarCliente(int id) {
-    for(int i = 0; i < clientes.size(); i++) {
-      if(id == clientes.get(i).getId()) clientes.remove(i);
+  public void eliminarCliente() {
+    System.out.println("Que cliente desea eliminar? Número de id: ");
+    int id = scan.nextInt();
+    scan.nextLine();
+
+    Iterator<Cliente> iterador = clientes.iterator();
+
+    while (iterador.hasNext()) {
+        Cliente cliente = iterador.next();
+        if (id == cliente.getId()) {
+            iterador.remove();
+            System.out.println("Cliente eliminado exitosamente.");
+            break;
+        }
+        System.out.println("No se encontró ningún cliente con el ID especificado.");
     }
   }
 
